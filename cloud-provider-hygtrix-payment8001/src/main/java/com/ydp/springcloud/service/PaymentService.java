@@ -1,5 +1,7 @@
 package com.ydp.springcloud.service;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 /**
  * @author YDP
  * @version 1.0
@@ -22,4 +24,14 @@ public interface PaymentService {
      * @return 提示语
      */
     String paymentInfoTimeOut(Integer id);
+
+    //-------------------------服务熔断-------------------------
+
+    /**
+     * 服务熔断方法
+     *
+     * @param id id
+     * @return 提示语
+     */
+    String paymentCircuitBreaker(@PathVariable("id") Integer id);
 }
